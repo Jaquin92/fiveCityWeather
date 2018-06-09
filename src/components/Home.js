@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 //import axios used to make requests to the api
-import axios from "axios";
+import axios from 'axios';
+//import Link from react-router-dom to link to next component
+import { Link } from 'react-router-dom';
 
 export default class Home extends Component {
     constructor() {
@@ -45,12 +47,12 @@ export default class Home extends Component {
 
     newYork() {
         if (this.state.newYork) {
-            return <div className="city-card" >
+            return <Link to={`/city/${this.state.newYork.id}`} ><div className="city-card" >
                 <h1>{this.state.newYork.name}</h1>
                 <img src={`http://openweathermap.org/img/w/${this.state.newYork.weather[0].icon}.png`} alt="New York weather icon" />
                 <span>{this.state.newYork.weather[0].description.toUpperCase()}</span>
                 <span>{`${Math.floor(this.state.newYork.main.temp)}°F`}</span>
-            </div>
+            </div></Link>
         }
     };
     dallas() {

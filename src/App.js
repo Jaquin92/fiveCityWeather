@@ -14,7 +14,7 @@ class App extends Component {
 
     return (
 
-      <div>{routes}</div>
+      <div  >{routes}</div>
 
 
 

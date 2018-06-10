@@ -47,56 +47,56 @@ export default class Home extends Component {
 
     newYork() {
         if (this.state.newYork) {
-            return <Link to={`/city/${this.state.newYork.id}`} ><div className="city-card" >
+            return <Link className="city-card" to="/city/10022" >
                 <h1>{this.state.newYork.name}</h1>
                 <img src={`http://openweathermap.org/img/w/${this.state.newYork.weather[0].icon}.png`} alt="New York weather icon" />
                 <span>{this.state.newYork.weather[0].description.toUpperCase()}</span>
-                <span>{`${Math.floor(this.state.newYork.main.temp)}°F`}</span>
-            </div></Link>
+                <span>{`${Math.floor(this.state.newYork.main.temp)}°F`}</span></Link>
+
         }
     };
     dallas() {
         if (this.state.dallas) {
-            return <div className="city-card" >
+            return <Link className="city-card" to="/city/75201" >
                 <h1>{this.state.dallas.name}</h1>
                 <img src={`http://openweathermap.org/img/w/${this.state.dallas.weather[0].icon}.png`} alt="Dallas weather icon" />
                 <span>{this.state.dallas.weather[0].description.toUpperCase()}</span>
                 <span>{`${Math.floor(this.state.dallas.main.temp)}°F`}</span>
-            </div>
+            </Link>
         }
     };
     la() {
         if (this.state.la) {
-            return <div className="city-card" >
+            return <Link className="city-card" to="/city/90018" >
                 <h1>{this.state.la.name}</h1>
                 <img src={`http://openweathermap.org/img/w/${this.state.la.weather[0].icon}.png`} alt="la weather icon" />
                 <span>{this.state.la.weather[0].description.toUpperCase()}</span>
                 <span>{`${Math.floor(this.state.la.main.temp)}°F`}</span>
-            </div>
+            </Link>
         }
     };
     boulder() {
         if (this.state.boulder) {
-            return <div className="city-card" >
+            return <Link className="city-card" to="/city/80301" >
                 <h1>{this.state.boulder.name}</h1>
                 <img src={`http://openweathermap.org/img/w/${this.state.boulder.weather[0].icon}.png`} alt="boulder weather icon" />
                 <span>{this.state.boulder.weather[0].description.toUpperCase()}</span>
                 <span>{`${Math.floor(this.state.boulder.main.temp)}°F`}</span>
-            </div>
+            </Link>
         }
     };
     seattle() {
         if (this.state.seattle) {
-            return <div className="city-card" >
+            return <Link className="city-card" to="/city/98101" >
                 <h1>{this.state.seattle.name}</h1>
                 <img src={`http://openweathermap.org/img/w/${this.state.seattle.weather[0].icon}.png`} alt="seattle weather icon" />
                 <span>{this.state.seattle.weather[0].description.toUpperCase()}</span>
                 <span>{`${Math.floor(this.state.seattle.main.temp)}°F`}</span>
-            </div>
+            </Link>
         }
     };
     render() {
-        return <div id="App-body" >
+        return <div style={{ paddingTop: 100 + "px" }} id="Weather-display" >
             {this.newYork()}
             {this.dallas()}
             {this.la()}
